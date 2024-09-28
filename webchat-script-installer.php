@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Webchat Script Installer
+Plugin Name: Chatbot Builder AI Webchat Script Installer
 Description: Adds the webchat script to your WordPress site with user-supplied account and webchat ID.
 Version: 1.0
-Author: Your Name
+Author: Chatbot Builder AI
 */
 
 // Add settings page
