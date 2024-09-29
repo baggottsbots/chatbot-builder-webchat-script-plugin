@@ -2,7 +2,7 @@
 /*
 Plugin Name: Chatbot Builder AI Webchat Installer
 Description: Integrates the Chatbot Builder AI Webchat with your WordPress site using your script.
-Version: 1.1
+Version: 1.2
 Author: Chatbot Builder AI Team
 */
 
@@ -26,7 +26,7 @@ function chatbot_builder_ai_webchat_settings_page_html() {
 
     // Save settings if form is submitted
     if (isset($_POST['webchat_script'])) {
-        update_option('chatbot_builder_ai_webchat_script', wp_kses_post($_POST['webchat_script']));
+        update_option('chatbot_builder_ai_webchat_script', wp_unslash($_POST['webchat_script']));
         echo "<div class='updated'><p>Settings saved.</p></div>";
     }
 
@@ -42,7 +42,7 @@ function chatbot_builder_ai_webchat_settings_page_html() {
                     <th scope="row">Webchat Script:</th>
                     <td>
                         <textarea name="webchat_script" rows="10" cols="50" class="large-text code" required><?php echo esc_textarea($webchat_script); ?></textarea>
-                        <p class="description">Paste your full Chatbot Builder AI Webchat script here.</p>
+                        <p class="description">Paste your full Chatbot Builder AI Webchat script here, including the &lt;script&gt; tags.</p>
                     </td>
                 </tr>
             </table>
@@ -57,7 +57,7 @@ function chatbot_builder_ai_add_webchat_script() {
     $webchat_script = get_option('chatbot_builder_ai_webchat_script', '');
 
     if ($webchat_script) {
-        echo $webchat_script;
+        echo $webchat_script; // Output the full script as raw HTML
     }
 }
 add_action('wp_footer', 'chatbot_builder_ai_add_webchat_script');
