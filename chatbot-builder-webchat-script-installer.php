@@ -10,7 +10,7 @@ Author: Chatbot Builder AI
 function webchat_settings_page() {
     add_options_page(
         'Webchat Script Settings',
-        'Webchat Script',
+        'Chatbot Builder Webchat Script',
         'manage_options',
         'webchat-script',
         'webchat_settings_page_html'
@@ -37,7 +37,7 @@ function webchat_settings_page_html() {
 
     ?>
     <div class="wrap">
-        <h1>Webchat Script Settings</h1>
+        <h1>Chatbot Builder AI Webchat Script Settings</h1>
         <form method="POST">
             <table class="form-table">
                 <tr valign="top">
